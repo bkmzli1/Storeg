@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bkmz.controller.ControllerMain">
+    <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox spacing="10.0">
+                            <children>
+                                <Button fx:id="add" mnemonicParsing="false" onAction="#addStored"
+                                        text="добавить склад"/>
+                                <Button fx:id="addInfo" mnemonicParsing="false" onAction="#addStoredInfo"
+                                        text="добавить товар"/>
+                                <Button fx:id="remove" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                        onAction="#remove" text="удалить склад" VBox.vgrow="ALWAYS"/>
+                                <Button fx:id="removeInfo" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                        onAction="#removeInfo" text="удалить товар" VBox.vgrow="ALWAYS"/>
+                                <Button fx:id="edit" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                        onAction="#edit" text="изменить" VBox.vgrow="ALWAYS"/>
+                                <Button disable="true" maxHeight="1.7976931348623157E308" mnemonicParsing="false"
+                                        text="Button" visible="false" VBox.vgrow="ALWAYS"/>
+                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#update"
+                                        text="обновить" VBox.vgrow="ALWAYS"/>
+
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </padding>
+                        </VBox>
+                        <TabPane fx:id="tabStored" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+                                 HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </padding>
+                        </TabPane>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

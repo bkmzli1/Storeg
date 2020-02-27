@@ -1,0 +1,69 @@
+plugins {
+    id 'java'
+    id 'edu.sc.seis.launch4j' version '2.4.6'
+
+}
+
+def versions = '1.1.1.6'
+def name = 'Storeg'
+def main = 'ru.bkmz.Main'
+def splash ='img/load.gif'
+
+
+launch4j {
+    mainClassName = main
+    outfile = name + " " + versions + ".exe"
+    version = versions
+    textVersion = versions
+    companyName = "BkzmLitel"
+    copyright = "BkzmLitel"
+    launch4j.language = 'RUSSIAN'
+    launch4j.icon = "B:\\fon1 (1).ico"
+
+
+
+    /* launch4j.jreMinVersion = "1.8.0"
+     launch4j.jreMaxVersion = "1.8.0_221"*/
+    internalName = name
+}
+
+
+apply plugin: "edu.sc.seis.launch4j"
+group name
+version versions
+
+sourceCompatibility = 1.8
+compileJava.options.encoding = "UTF-8"
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.30.1'
+    // https://mvnrepository.com/artifact/org.javalite/javalite-common
+    compile group: 'org.javalite', name: 'javalite-common', version: '2.3.1-j8'
+// https://mvnrepository.com/artifact/org.javalite/activejdbc
+    compile group: 'org.javalite', name: 'activejdbc', version: '2.3.1-j8'
+    // https://mvnrepository.com/artifact/org.jsoup/jsoup
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.12.2'
+// https://mvnrepository.com/artifact/org.kordamp.bootstrapfx/bootstrapfx-core
+    compile group: 'org.kordamp.bootstrapfx', name: 'bootstrapfx-core', version: '0.2.4'
+
+}
+jar {
+    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest {
+        attributes(
+                'Class-Path': configurations.runtime.files.collect { "lib/$it.name" }.join(' '),
+                'Main-Class': main,
+                'SplashScreen-Image': splash,
+
+
+        )
+    }
+}

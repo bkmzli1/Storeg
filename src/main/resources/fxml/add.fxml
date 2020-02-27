@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="36.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bkmz.controller.ControllerAdd">
+   <children>
+      <HBox prefWidth="440.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <TextField fx:id="addText" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#addButton" text="добавить склад" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
