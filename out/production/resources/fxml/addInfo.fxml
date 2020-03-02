@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bkmz.controller.ControllerAddInf">
+    <children>
+      <VBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ComboBox fx:id="list" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
+              <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="nameTxt" maxWidth="1.7976931348623157E308" promptText="имя раздела" HBox.hgrow="ALWAYS" />
+                  <DatePicker fx:id="date" maxWidth="1.7976931348623157E308" promptText="дата поступления" HBox.hgrow="ALWAYS" />
+               </children></HBox>
+            <TextArea fx:id="description" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="описание" VBox.vgrow="ALWAYS" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#add" text="добавить" VBox.vgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+    </children>
+</AnchorPane>

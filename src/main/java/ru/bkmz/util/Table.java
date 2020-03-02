@@ -3,9 +3,9 @@ package ru.bkmz.util;
 import javafx.scene.control.CheckBox;
 
 public class Table {
-    int id;
-    CheckBox checkBox;
-    String name, dataCreations, dataArrivals, description;
+    int id;//id таблицы
+    CheckBox checkBox;// кнопачка для удаления
+    String name, dataCreations, dataArrivals, description;//все строковые параметры
 
     public Table(int id, String name, String dataCreations, String dataArrivals, String description) {
         this.id = id;

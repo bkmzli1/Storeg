@@ -15,12 +15,7 @@ import java.io.IOException;
 
 public class ControllerMain {
 
-    public static StageDialog addDialog = new StageDialog("add");
-    public static StageDialog addInfoDialog = new StageDialog("addInfo");
-    public static StageDialog removeDialog = new StageDialog("remove");
-    public static StageDialog removeInfoDialog = new StageDialog("removeInfo");
-    public static StageDialog editDialog = new StageDialog("edit");
-    public static ItemsMain itemsMain;
+   //получаем элементы окна из fxml они имею в файле вот такой вид  fx:id="tabStored"
     public TabPane tabStored;
     public Button add;
     public Button edit;
@@ -28,12 +23,23 @@ public class ControllerMain {
     public Button remove;
     public Button removeInfo;
     public AnchorPane root;
+    //создаём все дополнительные окна
+    public static StageDialog addDialog ;
+    public static StageDialog addInfoDialog ;
+    public static StageDialog removeDialog ;
+    public static StageDialog removeInfoDialog ;
+    public static StageDialog editDialog;
+    //это класс который нужен для получения элементов окна из вне этого класса
+    public static ItemsMain itemsMain;
 
     public void initialize() {
+        //определяем этот класс
         itemsMain = new ItemsMain(tabStored, add, edit, addInfo, remove, removeInfo);
+        // обновляем таблицу
         itemsMain.update();
     }
-
+// new StageDialog(имя файла fxml);
+// создаём окно addDialog.show();//выводим окно
     public void addStored(ActionEvent actionEvent) {
         addDialog = new StageDialog("add");
         addDialog.show();
@@ -59,10 +65,4 @@ public class ControllerMain {
         editDialog = new StageDialog("edit");
         editDialog.show();
     }
-
-    public void update(ActionEvent actionEvent) {
-        itemsMain.update();
-    }
-
-
 }

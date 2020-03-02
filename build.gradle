@@ -41,17 +41,9 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.0'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
     compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.30.1'
-    // https://mvnrepository.com/artifact/org.javalite/javalite-common
-    compile group: 'org.javalite', name: 'javalite-common', version: '2.3.1-j8'
-// https://mvnrepository.com/artifact/org.javalite/activejdbc
-    compile group: 'org.javalite', name: 'activejdbc', version: '2.3.1-j8'
-    // https://mvnrepository.com/artifact/org.jsoup/jsoup
-    compile group: 'org.jsoup', name: 'jsoup', version: '1.12.2'
+
 // https://mvnrepository.com/artifact/org.kordamp.bootstrapfx/bootstrapfx-core
-    compile group: 'org.kordamp.bootstrapfx', name: 'bootstrapfx-core', version: '0.2.4'
 
 }
 jar {
@@ -61,9 +53,6 @@ jar {
         attributes(
                 'Class-Path': configurations.runtime.files.collect { "lib/$it.name" }.join(' '),
                 'Main-Class': main,
-                'SplashScreen-Image': splash,
-
-
         )
     }
 }

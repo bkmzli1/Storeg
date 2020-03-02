@@ -25,8 +25,6 @@
                                         onAction="#edit" text="изменить" VBox.vgrow="ALWAYS"/>
                                 <Button disable="true" maxHeight="1.7976931348623157E308" mnemonicParsing="false"
                                         text="Button" visible="false" VBox.vgrow="ALWAYS"/>
-                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#update"
-                                        text="обновить" VBox.vgrow="ALWAYS"/>
 
                             </children>
                             <padding>

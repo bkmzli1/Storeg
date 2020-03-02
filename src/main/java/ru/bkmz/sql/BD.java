@@ -1,54 +1,37 @@
 package ru.bkmz.sql;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 
+//Этот класс подключает БД
 public class BD {
-    private Connection conn;
+    private Connection conn;//Эта переменная является по суте указателем где находится БД
+    //это конструктор класса он нужен что бы  при вызове класса в Main подключалась БД
+    // также он принемает строку (пут к БД)
+    // throws  это иключение только в отличии от try{}catch() он выводит исключение из функции это нужно чтобы при первом запуске нету папки где будет БД
+    // ClassNotFoundException - это если    Class.forName("org.sqlite.JDBC"); нет
+    // SQLException - это если БД говорит об ошибке
+    public BD(String fileConn) throws ClassNotFoundException, SQLException {
 
-    protected static final Logger logger = LogManager.getLogger();
+            Class.forName("org.sqlite.JDBC");//подключаем API для БД
+            conn = DriverManager.getConnection("jdbc:sqlite:" + fileConn);// подключение к БД "jdbc:sqlite:" (тип БД) + fileConn (адрес БД)
 
-    public BD(String fileConn) throws ClassNotFoundException {
-        try {
-            conn = null;
-            Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection("jdbc:sqlite:" + fileConn);
-            logger.info("Connection: " + fileConn);
-        } catch (SQLException e) {
-            logger.warn("SQLException: ", e);
-        }
 
     }
-
+    //функция для быстрого создания запросса и его закрытия (запрос на создания чего либо)
     public void setBD(String inquiry) throws SQLException {
-        logger.info("Statement: " + inquiry);
-        Statement statmt = conn.createStatement();
-        statmt.execute(inquiry);
 
-        statmt.close();
+        Statement statmt = conn.createStatement();//Statement - это интерфейс для запросов к БД
+        //Интерфе́йс (от англ. interface) — общая граница между двумя функциональными объектами, требования к которой определяются стандартом[1]; совокупность средств, методов и правил
+        // взаимодействия (управления, контроля и т. д.) между элементами системы[2]. из вики я сам хз что это
+        statmt.execute(inquiry);//сам запрос
 
-    }
-
-    public ResultSet getBD(String inquiry) throws SQLException {
-        logger.info("resultSet: " + inquiry);
-        ResultSet resultSet = null;
-
-        Statement statmt = conn.createStatement();
-        resultSet = statmt.executeQuery(inquiry);
-        statmt.close();
-
-
-        return resultSet;
+        statmt.close();//закрываем запрос так как он нам большне не нужен
 
     }
 
+// получем Connection conn; для работы сним в не класса БД
     public Connection getConn() {
         return conn;
-    }
-
-    public void setConn(Connection conn) {
-        this.conn = conn;
     }
 }

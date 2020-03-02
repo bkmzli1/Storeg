@@ -8,21 +8,19 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import ru.bkmz.util.Notification;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
+
 import static ru.bkmz.Main.bd;
 import static ru.bkmz.controller.ControllerAddInf.textPropertyTime;
 
 public class ControllerEdit {
 
-    protected static final Logger logger = LogManager.getLogger();
+
     public ComboBox listTable;
     public ComboBox<String> listName;
     public TextField nameTxt;
@@ -44,7 +42,7 @@ public class ControllerEdit {
                 observableList.add(name);
             }
         } catch (SQLException e) {
-            logger.error("update edit: ", e);
+
         }
         listTable.setItems(observableList);
         listTable.setValue(observableList.get(0));
@@ -57,7 +55,7 @@ public class ControllerEdit {
         textPropertyTime(timeSS, 2, 60);
 
         ChangeListener<String> changeListener2 = (observable, oldValue, newValue) -> {
-            logger.trace(newValue);
+
             try {
                 if (listName.getItems().size() != 0) {
                     String[] idM = newValue.split("");
@@ -71,9 +69,9 @@ public class ControllerEdit {
                     }
                     id = id.replace("id:", "");
                     this.id = id;
-                    logger.trace(id);
+
                     Statement statmtTable = bd.getConn().createStatement();
-                    logger.trace("SELECT * FROM '" + listTable.getValue() + "' WHERE id = " + id);
+
                     ResultSet resultSetTable = statmtTable.executeQuery("SELECT * FROM '" + listTable.getValue() + "' WHERE id = " + id);
 
 
@@ -89,11 +87,11 @@ public class ControllerEdit {
                         timeSS.setText(time[2]);
                     }
                 } else {
-                    logger.info("listName size = null");
+
                 }
 
             } catch (SQLException e) {
-                logger.error("edit:", e);
+
             }
         };
         listName.getSelectionModel().selectedItemProperty().addListener(changeListener2);
@@ -109,8 +107,8 @@ public class ControllerEdit {
                     ":" + timeSS.getText() + "', " + "'description' = '" + description.getText() + "'  WHERE id = '" + this.id + "'");
             ControllerMain.itemsMain.update();
         } catch (SQLException e) {
-            new Notification("Изменения", "Заполните все поля или выберите, что изменить");
-            logger.error("edit:", e);
+
+
         }
     }
 
@@ -132,10 +130,10 @@ public class ControllerEdit {
                 }
             } catch (SQLException sqlE) {
                 statmt.execute("DELETE FROM 'Storeg_name' WHERE name = '" + listTable.getValue() + "'");
-                new Notification("Error", "Таблица \"" + listTable.getValue() + "\" несуществует");
+
             }
         } catch (SQLException e) {
-            logger.error("update: ", e);
+
         }
 
     }

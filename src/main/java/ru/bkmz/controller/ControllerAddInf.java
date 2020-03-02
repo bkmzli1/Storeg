@@ -9,14 +9,14 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+;
 
 import static ru.bkmz.Main.bd;
 
@@ -29,7 +29,7 @@ public class ControllerAddInf {
     public TextField timeMM;
     public TextField timeHH;
 
-    protected static final Logger logger = LogManager.getLogger();
+
 
     public void initialize() {
         ObservableList<String> observableList = FXCollections.observableArrayList();
@@ -42,7 +42,7 @@ public class ControllerAddInf {
                 observableList.add(name);
             }
         } catch (SQLException e) {
-            logger.error("update: ", e);
+
         }
         list.setItems(observableList);
         list.setValue(observableList.get(0));
@@ -70,7 +70,7 @@ public class ControllerAddInf {
                     description.getText() +
                     "'); ");
         } catch (SQLException e) {
-            logger.error("add: ", e);
+
         }
         ControllerMain.itemsMain.update();
     }

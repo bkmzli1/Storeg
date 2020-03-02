@@ -1,0 +1,203 @@
+.root {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -my-highlight-color: rgba(0, 0, 0, 0);
+    -my-hover-color: derive(-fx-background, -15%);
+    -my-armed-color: derive(-fx-background, -27%);
+    rootColor: #7b7d7b;
+    qubitColor: white;
+    icon-color: #636563;
+}
+
+.menu-bar {
+    -fx-effect: innershadow(three-pass-box, rgb(0, 0, 0), -35, 0, 0, 0);
+}
+
+#menu {
+    -fx-effect: innershadow(three-pass-box, rgb(0, 0, 0), -35, 0, 0, 0);
+}
+
+#text {
+    -fx-font-size: 20;
+    /* -fx-font-family: "Arial Black";*/
+
+    -fx-fill: #000000;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+    /*-fx-font-weight: 900;*/
+
+
+}
+
+.text-area {
+    -fx-font-size: 15;
+    /* -fx-font-family: "Arial Black";*/
+
+    -fx-fill: #000000;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+    /*-fx-font-weight: 900;*/
+
+
+}
+
+.text-field {
+    -fx-font-size: 15;
+    /* -fx-font-family: "Arial Black";*/
+
+    -fx-fill: #000000;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+    /*-fx-font-weight: 900;*/
+
+}
+
+.text {
+    -fx-font-size: 15;
+    /* -fx-font-family: "Arial Black";*/
+
+    -fx-fill: #000000;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+    /*-fx-font-weight: 900;*/
+
+}
+
+.menu-bar {
+
+    -fx-font-size: 15;
+    -fx-font-family: "Arial Black";
+    -fx-fill: #373737;
+    -fx-effect: innershadow(three-pass-box, rgb(143, 143, 143), 50, 0, 0, 5);
+}
+
+.menu-bar .text {
+    -fx-font-size: 15;
+    -fx-font-family: "Arial Black";
+
+    -fx-fill: #000000;
+    -fx-effect: innershadow(three-pass-box, rgb(82, 82, 82), 22, 0.0, 0, 22);
+
+
+}
+.menu:hover{
+    -fx-background-color: #ffffff;
+
+}
+.menu:disabled{
+    -fx-background-color: #ffffff;
+
+}
+.menu:selected {
+    -fx-background-color: #ffffff;
+
+}
+.menu:focused {
+    -fx-background-color: #ffffff;
+
+}
+.menu:armed {
+    -fx-background-color: #ffffff;
+
+}
+.menu:default {
+    -fx-background-color: #ffffff;
+
+}
+
+.menu-item:hover{
+    -fx-background-color: #ffffff;
+
+}
+.menu-item:selected {
+    -fx-background-color: #ffffff;
+
+}
+.menu-item:armed {
+    -fx-background-color: #ffffff;
+
+}
+
+#OUT {
+
+}
+
+.tooltip {
+    -fx-font-size: 15;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #002932;
+
+}
+
+.tooltip .text {
+    -fx-fill: #ff001f;
+
+}
+
+
+#OUT {
+
+}
+
+.tooltip {
+    -fx-font-size: 15;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #002932;
+}
+
+.tooltip .text {
+    -fx-fill: #ff001f;
+
+}
+
+
+.button {
+    -fx-background-color: -fx-background;
+    -fx-border-color: derive(-fx-background, -50%);
+    -fx-border-width: .6;
+    -fx-border-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: -my-hover-color;
+    -fx-border-color: derive(-fx-background, -25%);
+    -fx-border-width: .55; /*Overide modena.css effect of button highlighting*/
+
+}
+
+.button:armed {
+    -fx-background-color: -my-armed-color;
+    -fx-border-color: derive(-fx-background, -50%);
+    -fx-border-width: .90; /*Overide modena.css effect of button highlighting*/
+}
+
+.tab-pane *.tab-header-area *.tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-pane {
+
+}
+
+.tab {
+    -fx-border-radius: 2px;
+    -fx-background-color: derive(-fx-background, -25%);
+}
+
+.tab:selected {
+    -fx-translate-y: 4;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-background-color: derive(-fx-background, -25%);
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.49), 10, 0.0, 0, 5)
+
+}
+
+.tab:hover {
+    -fx-translate-y: 2;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-background-color: derive(-fx-background, -25%);
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.49), 10, 0.0, 0, 5)
+
+}
+
+.tab:selected .text {
+    -fx-fill: #000000;
+}

@@ -11,8 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,7 +24,7 @@ import static ru.bkmz.Main.bd;
 public class ControllerRemoveInfo {
     public ComboBox list;
     public ListView listRemove;
-    protected static final Logger logger = LogManager.getLogger();
+
     List<CheckBox> checkBoxes;
     List<Integer> ids;
     ObservableList<String> observableList = FXCollections.observableArrayList();
@@ -41,7 +40,7 @@ public class ControllerRemoveInfo {
                 observableList.add(name);
             }
         } catch (SQLException e) {
-            logger.error("update: ", e);
+
         }
         list.setItems(observableList);
         ChangeListener<String> changeListener = (observable, oldValue, newValue) -> {
@@ -54,12 +53,12 @@ public class ControllerRemoveInfo {
         for (int i = 0; i < checkBoxes.size(); i++) {
             if (checkBoxes.get(i).isSelected()) {
                 int id = ids.get(i);
-                logger.info("remove: "+id);
+
                 try {
                     Statement statmt = bd.getConn().createStatement();
                     statmt.execute("DELETE FROM '" + list.getValue() + "' WHERE id = '" + id + "'");
                 } catch (SQLException e) {
-                    logger.error("update: ", e);
+
                 }
             }
         }
@@ -94,7 +93,7 @@ public class ControllerRemoveInfo {
             }
             listRemove.setItems(hBoxes);
         } catch (SQLException e) {
-            logger.error("update: ", e);
+
         }
 
     }
