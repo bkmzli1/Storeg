@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.bkmz.controller.ControllerAddInf">
     <children>
       <VBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ComboBox fx:id="list" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
-            <TextField fx:id="nameTxt" maxWidth="1.7976931348623157E308" promptText="имя товара" />
-              <HBox spacing="10.0">
-               <children>
-                  <DatePicker fx:id="date" maxWidth="1.7976931348623157E308" promptText="дата поступления" HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="timeHH" promptText="часы" HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="timeMM" promptText="минуты" HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="timeSS" promptText="секунды" HBox.hgrow="ALWAYS" />
-               </children></HBox>
+             <TextField fx:id="nameTxt" maxWidth="1.7976931348623157E308" promptText="имя товара" />
+             <HBox spacing="10.0">
+                 <children>
+                     <DatePicker fx:id="date" maxWidth="1.7976931348623157E308" promptText="дата поступления"
+                                 HBox.hgrow="ALWAYS"/>
+                     <TextField fx:id="timeHH" promptText="часы" HBox.hgrow="ALWAYS"/>
+                     <TextField fx:id="timeMM" promptText="минуты" HBox.hgrow="ALWAYS"/>
+                     <TextField fx:id="timeSS" promptText="секунды" HBox.hgrow="ALWAYS"/>
+                 </children>
+             </HBox>
+             <HBox spacing="10.0">
+                 <children>
+                     <TextField fx:id="userSurname" promptText="Фамилия" HBox.hgrow="ALWAYS"/>
+                     <TextField fx:id="userName" promptText="Имя" HBox.hgrow="ALWAYS"/>
+                     <TextField fx:id="userMotherhood" promptText="Отчество" HBox.hgrow="ALWAYS"/>
+                 </children>
+             </HBox>
             <TextArea fx:id="description" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="описание" VBox.vgrow="ALWAYS" />
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#add" text="добавить" VBox.vgrow="ALWAYS" />
          </children>

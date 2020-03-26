@@ -50,19 +50,23 @@ public class ItemsMain {
                 VBox.setVgrow(table, Priority.ALWAYS);
                 //создаём колонки и даём им имена,а также говорим что они работают с классом Table
                 TableColumn<Table, String> nameCol = new TableColumn<Table, String>("товар");
+                TableColumn<Table, String> nameUserCol = new TableColumn<Table, String>("ФИО");
 
+                TableColumn<Table, String> dataCol = new TableColumn<Table, String>("дата");
                 TableColumn<Table, String> dataCreationsCol = new TableColumn<Table, String>("дата создания записи");
-
                 TableColumn<Table, String> dataArrivalsCol = new TableColumn<Table, String>("дата поступления");
                 TableColumn<Table, String> descriptionCol = new TableColumn<Table, String>("описание");
 
                 //говорим что в классе Table какая колонка с какой работает переменной
                 nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+                nameUserCol.setCellValueFactory(new PropertyValueFactory<>("FIO"));
                 dataCreationsCol.setCellValueFactory(new PropertyValueFactory<>("dataCreations"));
                 dataArrivalsCol.setCellValueFactory(new PropertyValueFactory<>("dataArrivals"));
                 descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
+
+                dataCol.getColumns().addAll(dataCreationsCol, dataArrivalsCol);
                 //добовляем в таблицу колонки
-                table.getColumns().addAll(nameCol, dataArrivalsCol, descriptionCol);
+                table.getColumns().addAll(nameCol, nameUserCol,dataCol, descriptionCol);
 
 
                 Statement statmtCol = bd.getConn().createStatement();
@@ -78,9 +82,11 @@ public class ItemsMain {
                                         resultSetCol.getString("name"),
                                         resultSetCol.getString("data_Creations"),
                                         resultSetCol.getString("data_Arrivals"),
-                                        resultSetCol.getString("description")
+                                        resultSetCol.getString("description"),
+                                        resultSetCol.getString("surname") +" "+resultSetCol.getString("nameU")+" "+resultSetCol.getString("motherhood")
                                 ));
                     }
+
                     table.setItems(col);//добовляем в таблицу список строк
                     //закрываем подключения к БД
                     statmtCol.close();
@@ -100,7 +106,7 @@ public class ItemsMain {
             resultSet.close();
 //вообще хз какие тут могут быть исключения
         } catch (SQLException e) {
-e.printStackTrace();
+            e.printStackTrace();
         }
     }
 }

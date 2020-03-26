@@ -28,7 +28,9 @@ public class ControllerAddInf {
     public TextField timeSS;
     public TextField timeMM;
     public TextField timeHH;
-
+    public TextField userSurname;
+    public TextField userName;
+    public TextField userMotherhood;
 
 
     public void initialize() {
@@ -60,7 +62,7 @@ public class ControllerAddInf {
         try {
             Statement statmt = bd.getConn().createStatement();
             statmt.execute("INSERT INTO '" + list.getValue() +
-                    "' ('name', 'data_creations', 'data_arrivals','description') VALUES" +
+                    "' ('name', 'data_creations', 'data_arrivals','description','surname','nameU','motherhood') VALUES" +
                     " ('"
                     + nameTxt.getText()
                     + "', '" +
@@ -68,7 +70,7 @@ public class ControllerAddInf {
                     this.date.getValue() + "\n" + timeHH.getText() + ":" + timeMM.getText() + ":" + timeSS.getText()
                     + "','" +
                     description.getText() +
-                    "'); ");
+                    "','"+userSurname.getText()+"','"+userName.getText()+"','"+userMotherhood.getText()+"'); ");
         } catch (SQLException e) {
 
         }

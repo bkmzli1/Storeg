@@ -5,14 +5,15 @@ import javafx.scene.control.CheckBox;
 public class Table {
     int id;//id таблицы
     CheckBox checkBox;// кнопачка для удаления
-    String name, dataCreations, dataArrivals, description;//все строковые параметры
+    String name, dataCreations, dataArrivals, description, FIO;//все строковые параметры
 
-    public Table(int id, String name, String dataCreations, String dataArrivals, String description) {
+    public Table(int id, String name, String dataCreations, String dataArrivals, String description, String FIO) {
         this.id = id;
         this.name = name;
         this.dataCreations = dataCreations;
         this.dataArrivals = dataArrivals;
         this.description = description;
+        this.FIO = FIO;
         this.checkBox = new CheckBox();
     }
 
@@ -62,5 +63,13 @@ public class Table {
 
     public void setCheckBox(CheckBox checkBox) {
         this.checkBox = checkBox;
+    }
+
+    public String getFIO() {
+        return FIO;
+    }
+
+    public void setFIO(String FIO) {
+        this.FIO = FIO;
     }
 }

@@ -40,7 +40,8 @@ public class ControllerAdd {
                 Statement statmtCreate = bd.getConn().createStatement();
                 statmtCreate.execute(
                         ("create table \"table\" ( id INTEGER not null constraint table_pk primary key autoincrement, name " +
-                                "TEXT not null, data_creations TEXT not null, data_arrivals TEXT not null, description TEXT ); create unique " +
+                                "TEXT not null, data_creations TEXT not null, data_arrivals TEXT not null, description TEXT, surname TEXT not null, nameU TEXT not null, motherhood TEXT not null ); " +
+                                "create unique " +
                                 "index table_id_uindex on \"table\" (id);")
                                 .replace("\"table\"", "\"" + nameTable + "\""));
             } catch (SQLException ex) {

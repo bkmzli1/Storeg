@@ -1,12 +1,4 @@
 Manifest-Version: 1.0
-Class-Path: lib/log4j-core-2.13.0.jar lib/log4j-api-2.13.0.jar lib/sql
- ite-jdbc-3.30.1.jar lib/activejdbc-2.3.1-j8.jar lib/app-config-2.3.1-
- j8.jar lib/javalite-common-2.3.1-j8.jar lib/jsoup-1.12.2.jar lib/boot
- strapfx-core-0.2.4.jar lib/dom4j-2.1.1.jar lib/jaxen-1.1.4.jar lib/ja
- ckson-databind-2.9.10.jar lib/slf4j-api-1.7.25.jar lib/jaxb-api-2.2.1
- 1.jar lib/jaxb-core-2.2.11.jar lib/jaxb-impl-2.2.11.jar lib/activatio
- n-1.1.1.jar lib/jackson-annotations-2.9.10.jar lib/jackson-core-2.9.1
- 0.jar
+Class-Path: lib/sqlite-jdbc-3.30.1.jar
 Main-Class: ru.bkmz.Main
-SplashScreen-Image: img/load.gif
 

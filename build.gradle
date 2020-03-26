@@ -4,7 +4,7 @@ plugins {
 
 }
 
-def versions = '1.1.1.6'
+def versions = '1.1.1.9'
 def name = 'Storeg'
 def main = 'ru.bkmz.Main'
 def splash ='img/load.gif'

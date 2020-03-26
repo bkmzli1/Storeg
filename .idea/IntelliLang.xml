@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LanguageInjectionConfiguration">
+    <injection language="SQLite" injector-id="java">
+      <display-name>Statement.executeQuery (java.sql)</display-name>
+      <place disabled="true">psiParameter().ofMethod(0, psiMethod().withName(&quot;execute&quot;).withParameters(&quot;java.lang.String&quot;).definedInClass(&quot;java.sql.Statement&quot;))</place>
+      <place>psiParameter().ofMethod(0, psiMethod().withName(&quot;executeQuery&quot;).withParameters(&quot;java.lang.String&quot;).definedInClass(&quot;java.sql.Statement&quot;))</place>
+    </injection>
+  </component>
+</project>
